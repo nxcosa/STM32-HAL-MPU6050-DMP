@@ -26,8 +26,10 @@ int fputc(int ch,FILE *f)
 } 
 ```
 
-
-
+//main.c中添加
+```
+#include "mpu6050.h"
+```
 
 //MAIN函数中while函数前添加 
 ```
