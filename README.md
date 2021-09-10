@@ -5,7 +5,9 @@ STM32 HAL MPU6050 官方DMP6.12移植 FIFO 开启中断
 //参考B站“愿意做我的战士吗”大神
 
 //该代码使用串口1，i2c1，外部中断PA0,实际代码根据你自己的修改
-
+'''
+helloword()
+'''
 
 //移植过程我录了视频，可以去B站观看
 //https://www.bilibili.com/video/BV17h411p7s3?spm_id_from=333.999.0.0
