@@ -8,7 +8,9 @@ STM32 HAL MPU6050 官方DMP6.12移植 FIFO 开启中断 //使用STM32CUBE硬件I
 
 //移植过程我录了视频，可以去B站观看 //https://www.bilibili.com/video/BV17h411p7s3?spm_id_from=333.999.0.0
 
-//将MyCode文件夹全部添加进你自己的项目中，并在C/C++和项目目录内添加此文件夹
+//将文件全部下载下来添加进你自己的项目库目录中，并在C/C++和项目目录内添加此文件夹
+
+//在官方DMP6.12中的...\motion_driver_6.12\mpl libraries\arm\Keil目录内解压属于你内核的lib。我这个用的是M3内核。如果你用的是M4内核，则解压M4，并将解压后的libmplib.lib替换我这个库中的
 
 //宏定义中添加 
 ```
