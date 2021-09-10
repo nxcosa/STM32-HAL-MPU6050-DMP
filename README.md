@@ -13,9 +13,12 @@ STM32 HAL MPU6050 官方DMP6.12移植 FIFO 开启中断
 //将MyCode文件夹全部添加进你自己的项目中，并在C/C++和项目目录内添加此文件夹
 
 //宏定义中添加
+'
 ,MPL_LOG_NDEBUG=1,MPU6050,EMPL,USE_DMP,EMPL_TARGET_STM32F4
+'
 
 //usart.c函数最后添加这个，可以使用printf函数
+'
 #include "stdio.h"
 
 int fputc(int ch,FILE *f)
@@ -23,20 +26,21 @@ int fputc(int ch,FILE *f)
 	HAL_UART_Transmit(&huart1,(uint8_t *)&ch,1,1000);
 	return ch;
 }
-
+'
 
 //MAIN函数中while函数前添加
-mpu6050_init();
+'mpu6050_init();'
 
 //主函数WHILE循环中添加下面代码
-		float Pitch,Roll,Yaw;
+	'	float Pitch,Roll,Yaw;
 		long Temp;
 		MPU6050_Get_Euler_Temputer(&Pitch,&Roll,&Yaw,&Temp);
 		printf("Pitch : %.4f     ",(float)Pitch );
 		printf("Roll : %.4f    ",(float)Roll );
-		printf("Yaw : %.4f   \r\n",(float)Yaw );
+		printf("Yaw : %.4f   \r\n",(float)Yaw );'
 
 //中断回调函数,实际外部中断引脚根据你的定义引脚来,这个已经写入了mpu6050.c文件中
+'
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	if(GPIO_Pin == GPIO_PIN_0)
@@ -44,3 +48,4 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			gyro_data_ready_cb();
 		}
 }
+'
