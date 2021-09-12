@@ -4,7 +4,7 @@ STM32 HAL MPU6050 官方DMP6.12移植 FIFO 开启中断 //使用STM32CUBE硬件I
 
 //参考B站“愿意做我的战士吗”大神
 
-//该代码使用串口1，i2c1，外部中断PA0,实际代码根据你自己的修改
+//该代码使用串口1，i2c1，外部中断PA1,实际代码根据你自己的修改
 
 //移植过程我录了视频，可以去B站观看 //https://www.bilibili.com/video/BV17h411p7s3?spm_id_from=333.999.0.0
 
@@ -52,7 +52,7 @@ printf("Yaw : %.4f \r\n",(float)Yaw );
 ```
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) 
 { 
-    if(GPIO_Pin == GPIO_PIN_0)
+    if(GPIO_Pin == GPIO_PIN_1)
         { gyro_data_ready_cb(); }
 } 
 ```
